@@ -33,7 +33,7 @@ The current base structure is as follow:
   - **index.php**
 - **README.md**
 
-The relevante config files are:
+The relevant config files are:
 
 - /webroot/**index.php** - Environment configs are here (databases, debug flag)
 - /_protected/config/**routes.php** - Application Routes in the Yii default format
