@@ -1,47 +1,41 @@
 yii-boilerplate
 ===============
-Essa é uma estrutura base para o framework Yii em PHP, com layout em HTML5.
+This is a base structure to Yii Framework, written in PHP. The sample provided assumes a HTML5 project frontend. No libs of any kind are included. This is just the framework, nice and clean.
 
-### Por quê?
+### Why?
+This repository contains, besides a *lighter* Yii Framework itself (that can be easily updated whenever needed), all configuration files correctly set up for the **improved folder structured** used here. It includes samples for models, controllers, layouts, views, partials, yadda yadda.
 
-Esse repositório contém, além de uma versão "light" do framework em si (que pode ser facilmente atualizado), todos os arquivos de configuração já funcionais para os paths *melhorados*, além de exemplos de model, controller, layout, view, partial...
+### Basic Structure
+The current base structure is as follow:
 
-### Estrutura Básica
-A base da estrutura atual é a seguinte:
+- /
+- **...**
+- \_runtime/
+- \_yiif/
+- \_protected/
+  - controllers/
+  - config/
+     - **main.php**
+     - **routes.php**
+  - models/
+    - views/
+       - **...**
+       - layouts/
+           - \_parts/
+               - **...**
+           - **...**
+- webroot/
+  - \_assets/
+  - css/
+  - img/
+  - js/
+  - **.htaccess.model**
+  - **index.php**
+- **README.md**
 
-  /
-  README.md
+The relevante config files are:
 
-  _protected/
-    ...
-
-    config/
-      main.php
-
-    controllers/
-    models/
-    views/
-      ...
-
-      layouts/
-        index.php
-
-        _parts/
-          ...
-
-  _runtime/
-  _yiif/
-  webroot/
-    .htaccess.model
-    index.php
-
-    _assets/
-    css/
-    img/
-    js/
-
-Os arquivos de configuração relevantes são:
- * /webroot/***.htaccess.model*** - Configuração de rewrite da aplicação no caso de uso do Apache. Copie o arquivo para *.htaccess*.
- * /webroot/***index.php*** - Configure os ambientes da aplicação (banco de dados, debug)
- * /_protected/config/***routes.php*** - Rotas da aplicação. Formato padrão do Yii
- * /_protected/config/***main.php*** - Configuração interna do Yii
+- /webroot/**index.php** - Environment configs are here (databases, debug flag)
+- /_protected/config/**routes.php** - Application Routes in the Yii default format
+- /_protected/config/**main.php** - Other Yii configuration. I hope you don't need to touch this very often
+- /webroot/**.htaccess.model** - Rewrite config. If you're using Apache, copy this file to *.htaccess* and adjust the paths (specially the "*RewriteBase*")
