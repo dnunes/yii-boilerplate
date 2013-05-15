@@ -21,8 +21,8 @@ $r = array(
 	// application components
 	'components' => array(
 		'assetManager' => array(
-			'basePath' => $_CONFIG['webrootPath'] .'/_assets/',
-			'baseUrl' => $_CONFIG['webrootPath'] .'/_assets/'
+			'basePath' => $_CONFIG['webrootPath'] .'_assets/',
+			'baseUrl' => $_CONFIG['webrootURL'] . '_assets/'
 		),
 
 		'cache'=>array('class'=>'CDbCache'),

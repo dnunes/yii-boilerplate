@@ -4,11 +4,12 @@ $yii=dirname(__FILE__).'/../_yiif/yii.php';
 $config=dirname(__FILE__).'/../_protected/config/main.php';
 
 
-global $_CONFIG; $_CONFIG = Array(); $curPath = dirname(__FILE__);
+global $_CONFIG; $_CONFIG = Array(); $curPath = dirname(__FILE__) .'/';
 $_CONFIG['webrootPath']   = $curPath;
-$_CONFIG['homePath']      = $homePath = $curPath .'/..';
-$_CONFIG['protectedPath'] = $homePath .'/_protected';
-$_CONFIG['runtimePath']   = $homePath .'/_runtime';
+$_CONFIG['homePath']      = $homePath = $curPath .'../';
+$_CONFIG['protectedPath'] = $homePath .'_protected/';
+$_CONFIG['runtimePath']   = $homePath .'_runtime/';
+$_CONFIG['webrootURL']    = dirname($_SERVER['SCRIPT_NAME']) .'/';
 
 
 
