@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 
-<title>a study of population dynamics</title>
+<title>Yii-Boilerplate. Use me.</title>
 
 <link rel="stylesheet" href="<?php echo Yii::app()->getBaseUrl(true); ?>/css/home.css" type="text/css" />
 <script type="text/javascript">
