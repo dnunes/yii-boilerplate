@@ -5,9 +5,9 @@ Options -Indexes
 	RewriteEngine on
 	RewriteBase /
 
-	## Remove subdomains (mainly "www.")
-	RewriteCond %{HTTP_HOST} !^site\.com\.br$ [NC]
-	RewriteRule (.*) "http\:\/\/site\.com\.br/$1" [NC,R=301,L]
+	# Remove "www." subdomain
+	RewriteCond %{HTTP_HOST} !^www\.(.*)$ [NC]
+	RewriteRule (.*) "http\:\/\/%1/$1" [NC,R=301,L]
 
 	## Send the requests to framework
 	RewriteCond %{REQUEST_FILENAME} !-f
