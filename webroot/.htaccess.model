@@ -6,7 +6,7 @@ Options -Indexes
 	RewriteBase /
 
 	# Remove "www." subdomain
-	RewriteCond %{HTTP_HOST} !^www\.(.*)$ [NC]
+	RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 	RewriteRule (.*) "http\:\/\/%1/$1" [NC,R=301,L]
 
 	## Send the requests to framework
