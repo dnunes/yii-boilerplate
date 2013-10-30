@@ -9,6 +9,7 @@ This repository contains, besides a *lighter* Yii Framework itself (that can be 
 The current base structure is as follow:
 
 - /
+- **envconfig.php**
 - **...**
 - \_runtime/
 - \_yiif/
@@ -30,12 +31,11 @@ The current base structure is as follow:
   - img/
   - js/
   - **.htaccess.model**
-  - **index.php**
 - **README.md**
 
 The relevant config files are:
 
-- /webroot/**index.php** - Environment configs are here (databases, debug flag)
+- /**envconfig.php** - Environment configs are here (paths, databases, debug flag)
 - /_protected/config/**routes.php** - Application Routes in the Yii default format
 - /_protected/config/**main.php** - Other Yii configuration. I hope you don't need to touch this very often
 - /webroot/**.htaccess.model** - Rewrite config. If you're using Apache, copy this file to *.htaccess* and adjust the paths (specially the "*RewriteBase*")
