@@ -56,7 +56,7 @@ $r = array(
 );
 if (!defined('CLI_RUN')) { //web only
 	$r['defaultController'] = 'site';
-	$r['compontns']['assetManager'] = array(
+	$r['components']['assetManager'] = array(
 		'basePath' => $_CONFIG['webrootPath'] .'_assets',
 		'baseUrl' => $_CONFIG['webrootURL'] .'_assets'
 	);
