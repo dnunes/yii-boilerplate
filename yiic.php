@@ -8,7 +8,7 @@ if ($ok !== true) { die('Undefined environment. Please set the correct condition
 defined('STDIN') or define('STDIN', fopen('php://stdin', 'r'));
 
 $yii = $_CONFIG['yiiPath'] .'yii.php';
-$config = $_CONFIG['protectedPath'] .'config'. DS .'main.php';
+$config = $_CONFIG['protectedPath'] .'config'. DIRECTORY_SEPARATOR .'main.php';
 
 require_once($yii);
 $app=Yii::createConsoleApplication($config);
