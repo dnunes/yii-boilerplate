@@ -44,10 +44,15 @@ $r = array(
 		'log' => array('class' => 'CLogRouter', 'routes' => array(
 			array(
 				'class' => 'ext.yii-debug-toolbar.YiiDebugToolbarRoute',
-				'enabled' => $debug
+				'ipFilters' => array('*'), 'enabled' => $debug
 			),
 			array(
 				'class' => 'CFileLogRoute',
+				'enabled' => false,
+				'levels' => 'trace, info, error, warning'
+			),
+			array(
+				'class' => 'CWebLogRoute',
 				'enabled' => false,
 				'levels' => 'trace, info, error, warning'
 			)
