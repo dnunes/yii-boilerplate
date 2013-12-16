@@ -30,6 +30,7 @@ function returnConfig($opts) { global $_CONFIG;
 //###
 $_CONFIG['db_h'] = 'localhost'; //db host
 $_CONFIG['db_n'] = 'db'; //database name
+$_CONFIG['db_schemacache'] = 3600; //database schema caching ("0" to disable)
 
 
 

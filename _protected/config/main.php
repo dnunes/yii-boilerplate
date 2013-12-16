@@ -30,7 +30,7 @@ $r = array(
 			'username' => $_CONFIG['db_u'],
 			'password' => $_CONFIG['db_p'],
 			'charset' => 'utf8',
-			'schemaCachingDuration' => ($debug ? 0 : 3600),
+			'schemaCachingDuration' => $_CONFIG['db_schemacache'],
 			'enableProfiling' => $debug,
 			'enableParamLogging' => $debug
 		),
