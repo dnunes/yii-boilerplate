@@ -34,10 +34,15 @@ $_CONFIG['db_schemacache'] = 3600; //database schema caching ("0" to disable)
 
 
 
+
+
 //###
 //### Command-line Envs
 //###
 if (defined('CLI_RUN')) {
+
+
+
 	if ($curPath == 'C:\\dnunes\\code\\') { //dev
 		return returnConfig(array(
 			'db_u' => 'root', 'db_p' => ''
@@ -54,6 +59,8 @@ if (defined('CLI_RUN')) {
 //### Web Envs
 //###
 } else {
+
+
 
 	//prod
 	if (
