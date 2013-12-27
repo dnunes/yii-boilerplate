@@ -51,24 +51,31 @@ final class Helpers {
 		return trim($str);
 	}
 
+	static public function saveToSession($n, $v) {
+		Yii::app()->session[$n] = $v; return $v;
+	}
+	static public function getFromSession($v) {
+		return (isset(Yii::app()->session[$v])) ?
+			Yii::app()->session[$v] : false;
+	}
+	static public function saveToCache($n, $v) { Yii::app()->session[$n] = $v;
+		Yii::app()->session[$n .'_cachetime'] = time(); return $v;
+	}
 	static public function getFromCache($n, $expireTime = 5) {
 		$r = Helpers::getFromSession($n);
 		return (!$r || Helpers::isCacheExpired($n .'_cachetime', $expireTime)) ?
 			false : $r;
 	}
-	static public function setCache($n, $v) { Yii::app()->session[$n] = $v;
-		Yii::app()->session[$n .'_cachetime'] = time(); return $v;
-	}
-
-	static public function getFromSession($v) {
-		return (isset(Yii::app()->session[$v])) ?
-			Yii::app()->session[$v] : false;
+	static public function killSession($n = false) {
+		if (!$n) { $_SESSION = array(); session_destroy(); } //whole session
+		else { unset($_SESSION[$n]); } //specific var
 	}
 	static public function isCacheExpired($cacheName, $expireTime = 5) {
 		$old = Helpers::getFromSession($cacheName);
 		$diff = time() -$old; $limit = $expireTime * 60;
 		return $diff > $limit;
 	}
+
 
 	static public function Ex($code, $msg) {
 		throw new Exception('Erro código '. $code .'. Descrição: '. $msg);
