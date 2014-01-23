@@ -11,7 +11,7 @@ $_CONFIG['webrootPath']    = $curPath .'webroot'. $DS;
 $_CONFIG['protectedPath']  = $curPath .'_protected'. $DS;
 $_CONFIG['runtimePath']    = $curPath .'_runtime'. $DS;
 if (!defined('CLI_RUN')) {
-	$_CONFIG['webrootURL']     = dirname($_SERVER['SCRIPT_NAME']) .'/';
+	$_CONFIG['webrootURL'] = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/.\\') .'/';
 }
 
 
