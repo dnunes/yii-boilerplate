@@ -16,8 +16,8 @@ if (!defined('CLI_RUN')) {
 
 
 
-function returnConfig($opts) { global $_CONFIG;
-	foreach ($opts as $k => $v) {
+function returnConfig($envname, $opts) { global $_CONFIG;
+	define('ENV_NAME', $envname); foreach ($opts as $k => $v) {
 		if ($k == 'debug') { define('YII_DEBUG', $v); continue; }
 		$_CONFIG[$k] = $v;
 	} return true;
@@ -44,11 +44,11 @@ if (defined('CLI_RUN')) {
 
 
 	if ($curPath == 'C:\\dnunes\\code\\') { //dev
-		return returnConfig(array(
+		return returnConfig('dev', array(
 			'db_u' => 'root', 'db_p' => ''
 		));
 	} else { //prod
-		return returnConfig(array(
+		return returnConfig('prod', array(
 			'db_u' => 'root', 'db_p' => 'pass'
 		));
 	}
@@ -67,13 +67,13 @@ if (defined('CLI_RUN')) {
 		$_SERVER['HTTP_HOST'] == $_CONFIG['productionHost'] ||
 		$_SERVER['HTTP_HOST'] == 'www.'. $_CONFIG['productionHost']
 	) {
-		return returnConfig(array(
+		return returnConfig('prod', array(
 			'db_u' => 'user', 'db_p' => 'pass'
 		));
 
 	//homolog (debug ON)
 	} elseif ($_SERVER['HTTP_HOST'] == 'homolog.'. $_CONFIG['productionHost']) {
-		return returnConfig(array(
+		return returnConfig('homolog', array(
 			'debug' => true, 'db_u' => 'user', 'db_p' => 'pass'
 		));
 
@@ -82,7 +82,7 @@ if (defined('CLI_RUN')) {
 			$_SERVER['HTTP_HOST'] == 'site.dlocal' ||
 			$_SERVER['HTTP_HOST'] == 'localhost.dlocal'
 	) {
-		return returnConfig(array(
+		return returnConfig('dev', array(
 			'debug' => true, 'db_u' => 'user', 'db_p' => 'pass'
 		));
 	}
