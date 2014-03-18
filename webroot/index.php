@@ -1,6 +1,6 @@
 <?php
 
-$ok = require('../envconfig.php');
+$ok = require('../setenvconfig.php');
 if ($ok !== true) { die('Undefined environment. Please set the correct conditions on "envconfig.php" file.'); }
 
 $yii = $_CONFIG['yiiPath'] .'yii.php';
